@@ -10,9 +10,6 @@ def get_api_key(config_path='config.ini'):
     return config['DEFAULT']['API_KEY']
 
 api_key = get_api_key()
-
-
-
 def extract_subtext(text, start_marker="[[", end_marker="]]"):
     """Extracts a substring between a start and end marker."""
     start_index = text.find(start_marker)
@@ -58,7 +55,7 @@ if prompt:
 - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
 - If the query seems incomplete or unclear, offer a gentle prompt for more information.
 """
-
+    tailored_prompt=f"[[{prompt}]]"
     response = st.session_state.chat.send_message(tailored_prompt, safety_settings={
         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
