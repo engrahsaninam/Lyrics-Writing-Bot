@@ -58,7 +58,7 @@ if prompt:
     tailored_prompt= f"""
 **Query:** [[{prompt}]]
 **Additional Requirements:**
-- if the you are generating lyrics , follow the tone and style of the original or reference lyrics given to you
+- if the you are generating lyrics , Generate lyrics that emulate the tone, form, and style of the provided reference lyrics.
 - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
 - If the query seems incomplete or unclear, offer a gentle prompt for more information.
 """
