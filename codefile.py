@@ -55,7 +55,12 @@ if prompt:
 - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
 - If the query seems incomplete or unclear, offer a gentle prompt for more information.
 """
-    tailored_prompt=f"[[{prompt}]]"
+    tailored_prompt= f"""
+**Query:** [[{prompt}]]
+**Additional Requirements:**
+- If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
+- If the query seems incomplete or unclear, offer a gentle prompt for more information.
+"""
     response = st.session_state.chat.send_message(tailored_prompt, safety_settings={
         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
