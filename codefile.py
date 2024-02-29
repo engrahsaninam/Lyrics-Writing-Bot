@@ -79,6 +79,7 @@ if prompt:
 
 **Additional Requirements:**
     - if you are asked to write lyrics , your generated lines should follow the syllable count of the input given lyrics line by line , every verse should give the same essence as the parallel verse of provided lyrics but should not copy words from the provided lyrics
+    - if the input lyrics are written in modern english , use modern english language
     - if you are asked to write lyrics , Create new lyrics that are similar in style, language level, essence, and soul to the provided lyrics. 
     - If you are asked to generate lyrics , Don't copy words from the  input given lyrics.
     - If you are asked to generate lyrics , Grasp the core message, mood, and themes of the original song. Your generated lyrics should reflect an understanding of these elements, presenting them in a fresh light while maintaining the essence.
