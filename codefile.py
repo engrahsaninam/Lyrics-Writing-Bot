@@ -37,7 +37,12 @@ for message in st.session_state.chat.history:
     role = role_to_streamlit(message.role)
     prompt_text = extract_subtext(message.parts[0].text) if role == "user" else message.parts[0].text
     with st.chat_message(role):
-        st.markdown(prompt_text)
+        # Split response by verse and display line by line
+        verses = prompt_text.split('\n\n')
+        for verse in verses:
+            lines = verse.split('\n')
+            for line in lines:
+                st.markdown(line)
 
 # Handle new prompts
 prompt = st.chat_input("I'm here to help with your songwriting! Need rhymes, syllable counts, or a fresh take on your lyrics? Ask away!")
@@ -73,9 +78,11 @@ if prompt:
     -  If you are asked to generate lyrics , your tone should be as per the given input lyrics.
 
 **Additional Requirements:**
-    - If you are asked to generate lyrics , Don't use the same words used in the input given lyrics.
+    - if you are asked to write lyrics , your generated lines should follow the syllable count of the input given lyrics line by line , every verse should give the same essence as the parallel verse of provided lyrics but should not copy words from the provided lyrics
+    - if you are asked to write lyrics , Create new lyrics that are similar in style, language level, essence, and soul to the provided lyrics. 
+    - If you are asked to generate lyrics , Don't copy words from the  input given lyrics.
     - If you are asked to generate lyrics , Grasp the core message, mood, and themes of the original song. Your generated lyrics should reflect an understanding of these elements, presenting them in a fresh light while maintaining the essence.
-    - If you are asked to generate lyrics , Maintain the structural integrity of the original song (verse, chorus, bridge, etc.), using it as a scaffold for your new lyrics. This approach will help preserve the song's recognizable format while introducing new content.
+    - If you are asked to generate lyrics , Maintain the structural integrity of the original song (verse, chorus, bridge, etc.), using it as a scaffold for your new lyrics. 
     - If you are asked to generate lyrics , Employ various literary devices like metaphors, similes, alliteration, and imagery to enrich the lyrics. Your goal is to create a unique lyrical experience that differentiates from the original while keeping its spirit.
     - If you are asked to generate lyrics , While being mindful of the original's rhythm, feel free to adjust the rhyme scheme. This alteration can breathe new life into the song, offering listeners a novel auditory experience.
     - If you are asked to generate lyrics , Introduce new themes or ideas that complement the original message. These additions should enhance the song's depth and offer listeners further insights or a different perspective on the core theme.
@@ -83,14 +90,13 @@ if prompt:
     - If you are asked to generate lyrics , The lyrics you generate should be open to feedback, ready for iterative improvements to strike the perfect balance between homage and innovation.
     - If you are asked to generate lyrics , Be sensitive to the cultural, historical, and contextual significance of the original lyrics. Your adaptations should respect these elements, avoiding misrepresentation or cultural appropriation.
     - If you are asked to generate lyrics , Ensure that the lyrics produced are ethically sound and legally compliant, especially if intended for commercial use. Be aware of copyright implications and strive for a creative output that respects intellectual property rights.
-
     - If you are asked to generate lyrics , Follow the Language Difficulty Level Of the Provided Input Lyrics, If Modern English is Used in input Lyrics , You should also use Modern English , If Slangs are used in input Lyrics , You should also use Slangs.
     - If you are asked to generate lyrics , Follow the Flow of the Input Lyrics.
     - If you are asked to generate lyrics , The output lyrics should reflect a style of the given input lyrics.
     - If you are asked to generate lyrics , Maintain the rhyme scheme and rhythm as much as possible.
     - If you are asked to generate lyrics , Ensure that the rewritten lyrics capture the essence and attitude conveyed in the reference lyrics.
     - If you are asked to generate lyrics , Use language and expressions that align with the input song genre.
-    - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
+    - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!" , otherwise dont.
     - If the query seems incomplete or unclear, offer a gentle prompt for more information.
 """
     
