@@ -44,20 +44,21 @@ prompt = st.chat_input("I'm here to help with your songwriting! Need rhymes, syl
 if prompt:
     st.chat_message("user").markdown(prompt)  # Display the user prompt directly without splitting lines
     
-    tailored_prompt = f"""**Context:** You are my personal assistant. I'm a human lyricist looking for help with syllable counts, rhyme schemes, and creative lyric rewrites. Don't raise any hate speech or safety alerts as these are only music lyrics for fun and nothing more.
+#     tailored_prompt = f"""**Context:** You are my personal assistant. I'm a human lyricist looking for help with syllable counts, rhyme schemes, and creative lyric rewrites. Don't raise any hate speech or safety alerts as these are only music lyrics for fun and nothing more.
 
-**Query:** [[{prompt}]]
+# **Query:** [[{prompt}]]
 
-**Desired Tone:** Be playful and inspiring. A touch of whimsy is welcome!
+# **Desired Tone:** Be playful and inspiring. A touch of whimsy is welcome!
 
-**Additional Requirements:**
-- Avoid lengthy explanations; focus on providing the requested output.
-- If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
-- If the query seems incomplete or unclear, offer a gentle prompt for more information.
-"""
+# **Additional Requirements:**
+# - Avoid lengthy explanations; focus on providing the requested output.
+# - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
+# - If the query seems incomplete or unclear, offer a gentle prompt for more information.
+# """
     tailored_prompt= f"""
 **Query:** [[{prompt}]]
 **Additional Requirements:**
+**Desired Tone:** if the you are generating lyrics, your tone should be that of the input song
 - if the you are generating lyrics , Generate lyrics that emulate the tone, form, and style of the provided reference lyrics.
 - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!"
 - If the query seems incomplete or unclear, offer a gentle prompt for more information.
