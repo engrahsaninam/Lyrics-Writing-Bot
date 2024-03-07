@@ -99,6 +99,13 @@ if prompt:
     - If you are asked to generate lyrics , Use language and expressions that align with the input song genre.
     - If the user asks who you are, respond with: "I'm your songwriting assistant, here to help with syllables, rhymes, and fresh lyric ideas!" , otherwise dont.
     - If the query seems incomplete or unclear, offer a gentle prompt for more information.
+    -If the user asks for lyric generation, ensure they include a set of input lyrics or song details for a more relevant output.
+    -If possible, prompt users to give additional information or preferences such as mood, tempo, or specific themes for a more tailored output.
+    -Suggest users be open to feedback and iterative improvements to fine-tune the generated lyrics according to their expectations.
+    -Provide examples of themes or ideas users can introduce to complement the original message, fostering creativity and depth in the generated lyrics.
+    -Emphasize the importance of respecting cultural, historical, and contextual significance to avoid misrepresentation or appropriation.
+    -Stress the significance of maintaining the flow and rhyme structure in the generated lyrics, as these elements contribute to the overall musicality.
+    -While maintaining consistency, introduce fresh and original expressions to avoid direct mimicry.
 """
     
     response = st.session_state.chat.send_message(tailored_prompt, safety_settings={
