@@ -72,10 +72,10 @@ if prompt:
 **Query:** [[{prompt}]]
 
 **Output Instructions:**
-    - Rewrite the lyrics line by line, ensuring that each line maintains the syllable count specified in the original song also making sure they vibe with the original song's flow and feel.
+    -Rewrite the lyrics line by line, ensuring that each line maintains the syllable count specified in the original song while preserving the empowering and resilient tone.
 
 **Desired Tone:** 
-    - Maintain the empowering and resilient tone of the original lyrics.
+    -Maintain the empowering and resilient tone of the original lyrics while adhering to the syllable count.
 
 **Additional Requirements:**
     -If generating lyrics, ensure they follow the syllable count and rhythm of the input lyrics while maintaining a similar essence using original language.
