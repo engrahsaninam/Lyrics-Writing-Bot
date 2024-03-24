@@ -73,7 +73,7 @@ if prompt:
 
 **Output Instructions:**
     -Rewrite the lyrics line by line, ensuring that each line maintains the syllable count specified in the original song while preserving the empowering and resilient tone.
-    -Generate new lyrics that follow the syllable count and rhythm of the input lyrics, maintaining a similar essence using original language.
+    
 **Desired Tone:** 
     -Maintain the empowering and resilient tone of the original lyrics while adhering to the syllable count.
 
