@@ -69,7 +69,7 @@ if prompt:
 # - If the query seems incomplete or unclear, offer a gentle prompt for more information.
 
     tailored_prompt= f"""
-**Query:** [[{prompt}]]
+**Input Lyrics** [[{prompt}]]
 
 **Output Instructions:**
     -Rewrite the lyrics line by line, ensuring that each line maintains the syllable count specified in the original song while preserving the empowering and resilient tone.
